@@ -3,15 +3,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { deleteSnippet } from "@/actions";
 
-interface SnippedProps {
+interface SnippetProps {
 	params: {
 		id: string
 	}
 }
 
-//asdasd
-
-export default async function SnippetShowPage (props: SnippedProps) {
+export default async function SnippetShowPage (props: SnippetProps) {
 	
 	const snippet = await db.snippet.findFirst({
 		where: { id: parseInt(props.params.id)}
